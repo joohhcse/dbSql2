@@ -120,6 +120,14 @@ WHERE job = 'SALESMAN'
 AND hiredate >= TO_DATE('19810601', 'YYYYMMDD');
 
 
+SELECT *
+FROM emp
+WHERE deptno != 10
+AND hiredate >= TO_DATE('19810601', 'YYYYMMDD');
+
+
+
+
 
 
 

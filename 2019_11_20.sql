@@ -20,7 +20,7 @@ SELECT *
 FROM users;
 
 --userid, usernm, reg_dt 세가지 컬럼만 조회
-SELECT userid, usernm, reg_dt 
+SELECT userid, usernm, reg_dt
 FROM users;
 
 --userid, usernm, reg_dt 세가지 컬럼만 조회
