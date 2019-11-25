@@ -227,6 +227,25 @@ FROM dual;
 --NEXT_DAY(date, weekday(1~7)) : date이후 첫 번째 weekday 날짜
 --LAST_DAY(date) : date가 속한 월의 마지막 날짜
 
+--MONTH_BETWEEN(date1, date2)
+SELECT MONTHS_BETWEEN(TO_DATE('2019-11-25', 'YYYY-MM-DD'),
+                      TO_DATE('2019-03-25', 'YYYY-MM-DD')) m_bet,
+    TO_DATE('2019-11-25', 'YYYY-MM-DD') - TO_DATE('2019-03-31', 'YYYY-MM-DD') d_m  --두 날짜 사이의 일자수
+FROM dual;
+
+--ADD_MONTH(date, number(+,-) )
+SELECT ADD_MONTHS(TO_DATE('20191125', 'YYYYMMDD'), 5) NOW_AFTER5M,
+    ADD_MONTHS(TO_DATE('20191125', 'YYYYMMDD'), -5) NOW_BEFORE5M,
+    SYSTEM + 100 -- 100일 뒤의 날짜 (월 개념 3-31, 2-28/29)    
+FROM dual;
+
+--NEXT_DAY(date, weekday, number(1~7)
+SELECT NEXT_DAY(SYSDATE, 7) --오늘 날짜(2019/11/25)일 이후 등장하는 첫번째 토요일
+FROM dual;
+
+
+                      
+
 
 
 
