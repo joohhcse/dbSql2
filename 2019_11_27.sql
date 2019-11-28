@@ -83,7 +83,7 @@ FROM users;
 
 --cond3 > Sol
 SELECT a.userid, a.usernm, a.alias,
-        DECODE( MOD(a.yyyy, 2), mod(a.this_yyyy, 2), '건강검진대상', '건강검진비대상' ) contacttodoctor
+        DECODE( MOD(a.yyyy, 2), mod(a.this_yyyy, 2), '건강검진대상', '건강검진비대상' ) contact_to_doctor
 FROM
     (SELECT userid, usernm, alias, TO_CHAR(reg_dt, 'YYYY') yyyy,
             TO_CHAR(SYSDATE, 'YYYY') this_yyyy
@@ -118,7 +118,6 @@ SELECT  deptno,
         COUNT(*) count_row --부서의 조직원 수 
 FROM emp
 GROUP BY deptno;
-
 
 SELECT  deptno, ename,
         MAX(sal) max_sal, --부서에서 가장 높은 급여
@@ -263,7 +262,6 @@ GROUP BY deptno;
 SELECT COUNT(DISTINCT deptno)
 FROM emp;
 
-
 --JOIN
 --1.테이블 구조변경(컬럼 추가)
 --2.추가된 컬럼에 값을 update
@@ -273,7 +271,6 @@ DESC dept;
 
 --컬럼추가(dname, VARCHAR2(14))
 ALTER TABLE emp ADD (dname VARCHAR2(14));
-
 DESC emp;
 
 UPDATE emp SET dname = CASE
