@@ -260,7 +260,7 @@ FROM dual;
 SELECT empno, ename, 
     CASE
         WHEN MOD(TO_CHAR(hiredate, 'YYYY'), 2) =
-             MOD(TO_CHAR(SYSDATE, 'YYYY', 2)
+             MOD(TO_CHAR(SYSDATE, 'YYYY'), 2)
         THEN '건강검진 대상자'
         ELSE '건강검진 비대상자'
     END contact_to_doctor
@@ -272,7 +272,8 @@ FROM emp;
 SELECT empno, ename, 
     CASE
         WHEN MOD(TO_CHAR(hiredate, 'YYYY'), 2) =
-             MOD(TO_CHAR(SYSDATE, 'YYYY'), 2)
+--             MOD(TO_CHAR(TO_DATE(2020,'YYYY'), 'YYYY'), 2)
+             MOD(TO_CHAR(SYSDATE, 'YYYY')+1, 2)
         THEN '건강검진 대상자'
         ELSE '건강검진 비대상자'
     END contact_to_doctor
