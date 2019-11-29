@@ -192,11 +192,17 @@ ORDER BY e.deptno;
 
 -- 급여 2500 초과, 사번이 7600보다 큰 직원
 --join0_3
+SELECT emp.empno, emp.ename, emp.sal, emp.deptno, dept.dname 
+FROM emp, dept 
+WHERE emp.deptno = dept.deptno
+AND emp.sal > 2500
+AND emp.empno > 7600
+ORDER BY emp.deptno;
+
+--ANSI
 SELECT e.empno, e.ename, e.sal, e.deptno, d.dname 
-FROM emp e, dept d
-WHERE e.deptno = d.deptno
-AND e.sal > 2500
-AND e.empno > 7600
+FROM emp e JOIN dept d ON(e.deptno = d.deptno)
+WHERE e.sal > 2500 AND e.empno > 7600
 ORDER BY e.deptno;
 
 -- 급여 2500 초과, 사번이 7600보다 크고 부서명이 RESEARCH인 부서에 속한 직원
