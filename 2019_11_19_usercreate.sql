@@ -3,20 +3,20 @@
 SELECT *
 FROM DBA_DATA_FILES;
 
---table space »ı¼º
+--table space ìƒì„±
   CREATE TABLESPACE TS_DBSQL
    DATAFILE 'E:\B_UTIL\4.ORACLE\APP\ORACLE\ORADATA\XE\DBSQL.DBF' 
    SIZE 100M 
    AUTOEXTEND ON;
    
---»ç¿ëÀÚ Ãß°¡
+--ì‚¬ìš©ì ì¶”ê°€
 create user JOO identified by java
 default tablespace TS_DBSQL
 temporary tablespace temp
 quota unlimited on TS_DBSQL
 quota 0m on system;
 
---Á¢¼Ó, »ı¼º±ÇÇÑ
+--ì ‘ì†, ìƒì„±ê¶Œí•œ
 GRANT CONNECT, RESOURCE TO JOO;
 
 
