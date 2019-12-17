@@ -180,7 +180,20 @@ FROM
     GROUP BY TO_CHAR(dt, 'MM'));
 --DB쌤 답--
 
+SELECT dept_h.*, LEVEL
+FROM dept_h
+START WITH deptcd = 'dept0'           -- 시작점은 deptcd = 'dept0' --> XX회사(최상위조직)
+CONNECT BY PRIOR deptcd = p_deptcd;    -- PRIOR (이미 읽어준 녀석)
 
-
-
-
+/*
+    dept0(XX회사)
+        dept0_00(디자인부)
+            dept0_00_0(디자인팀)
+        dept0_01(정보기획부)
+            dept0_01_0(기획파트)
+                dept0_00_0_0(기획파트)
+        dept0_02(정보시스템부)
+            dept0_02_0(개발1팀)
+            dept0_02_1(개발1팀)
+            
+*/
