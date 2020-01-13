@@ -57,7 +57,6 @@ SELECT *
 FROM user_col_comments
 WHERE table_name = 'DEPT';
 
-
 --comment1 ½Ç½À
 SELECT *
 FROM user_col_comments
